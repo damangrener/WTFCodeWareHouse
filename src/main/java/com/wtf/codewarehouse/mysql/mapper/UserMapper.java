@@ -27,4 +27,8 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    int batchInsert(@Param("list") List<User> users);
+
+    int batchInsertOrUpdate(@Param("list") List<User> users);
 }

@@ -1,0 +1,7 @@
+1. **服务器中MySQL存入时间早八小时**
+    + 查看Linux系统时间：# date | 时间正常
+    + 进入MySQL：
+        1. show variables like '%time_zone%';
+        2. set time_zone='+8:00';  
+        
+（参考：+ https://www.cnblogs.com/gengyufei/p/11730308.html）

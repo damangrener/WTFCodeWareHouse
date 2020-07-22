@@ -13,3 +13,7 @@ spring:
       connection-test-query: SELECT 1
 server:
   port: 1998
+
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: com.wtf.codewarehouse.mysql.mapper

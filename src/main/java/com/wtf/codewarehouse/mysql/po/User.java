@@ -1,11 +1,21 @@
 package com.wtf.codewarehouse.mysql.po;
 
+import java.util.Date;
+
 public class User {
     private Integer id;
 
-    private String name;
+    private String account;
 
     private Integer age;
+
+    private String name;
+
+    private Integer delFlag;
+
+    private Date createTime;
+
+    private Date updateTime;
 
     public Integer getId() {
         return id;
@@ -13,6 +23,22 @@ public class User {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account == null ? null : account.trim();
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public String getName() {
@@ -23,11 +49,27 @@ public class User {
         this.name = name == null ? null : name.trim();
     }
 
-    public Integer getAge() {
-        return age;
+    public Integer getDelFlag() {
+        return delFlag;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setDelFlag(Integer delFlag) {
+        this.delFlag = delFlag;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }
