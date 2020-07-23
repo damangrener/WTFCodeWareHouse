@@ -1,0 +1,30 @@
+1. int和Integer  
+    int是基本数据类型，Integer是int的封装类，是引用类型。
+    
+    | |默认值|  
+    |:---:| :---:|
+    |int|0|  
+    |Integer|null|
+
+2. 基本数据类型和引用类型  
+    基本数据类型在声明时系统会自动给他分配空间，  
+    引用类型声明时只分配了引用空间，必须通过实例化开辟数据空间后才能赋值。
+    
+3. instanceof 关键字
+    一个双目运算符，用来测试一个对象是否为一个类的实例，  
+    用法：  
+    boolean result = obj instanceof Class;  
+    其中obj为一个对象，Class表示一个类或者一个接口，当obj为Class的对象或者子类，或者是接口的实现类，都返回true，  
+    如果obj为null就返回false。
+
+4. 自动装箱与拆箱 ->class IntegerAndInt
+
+    | |描述|调用方法|
+    |:---:|:---:|:---:|
+    |装箱|int->Integer|Integer.valueOf(int)|
+    |拆箱|Integer->int|Integer.intValue()|
+    
+5. equals与==
+    + ==比较的是变量（栈）内存中岑放的对象的（堆）内存地址，用来判断两个对象的地址是否相同，
+    即是否是指相同的一个对象，比较的是真正意义上的指针操作。
+    + equals用来比较两个对象的内容是否相等

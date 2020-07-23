@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -81,6 +82,7 @@ public class CRUDServiceImpl implements CRUDService {
         User user=new User();
         user.setName("王");
         user.setAge(99);
+        user.setCreateTime(new Date());
         return userMapper.updateByExampleSelective(user,example);
     }
 
