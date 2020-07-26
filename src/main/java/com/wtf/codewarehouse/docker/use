@@ -1,0 +1,46 @@
+### 1. 配置yum源（阿里云）
+1 安装wget  
+```
+yum install -y wget
+```
+2 备份/etc/yum.repos.d/CentOS-Base.repo文件
+```
+cd /etc/yum.repos.d/
+mv CentOS-Base.repo CentOS-Base.repo.back
+```
+3 下载阿里云的Centos-6.repo文件  
+```
+wget -O CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
+```
+4 重新加载yum
+```
+yum clean all
+yum makecache
+```
+
+###2. 安装docker
+```
+yum install docker -y
+```
+启动docker
+```
+systemctl start docker  #启动docker
+systemctl enable docker #开机启动docker
+systemctl status docker #查看docker状态
+docker version #查看docker 版本
+```
+设置加速器
+```
+curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://95822026.m.daocloud.io
+systemctl restart docker #重启docker
+```
+#### 设置完daocloud报错  
+Job for docker.service failed because the control process exited with error code. See "systemctl status docker.service" and "journalctl -xe" for details.
+
+看了下 /etc/docker/daemon.json  
+因为设置daocloud实际上是修改了/etc/docker/daemon.json这个文件，所以有可能是这个文件有问题，
+```  
+cat /etc/docker/daemon.json  
+{"registry-mirrors": ["http://95822026.m.daocloud.io"],} 
+``` 
+果然，json格式不对，去掉逗号后就正常了
