@@ -17,6 +17,32 @@ public class User {
 
     private Date updateTime;
 
+    public User(Integer id, String account, Integer age, String name, Integer delFlag, Date createTime, Date updateTime) {
+        this.id = id;
+        this.account = account;
+        this.age = age;
+        this.name = name;
+        this.delFlag = delFlag;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+    }
+
+    public User() {
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", account='" + account + '\'' +
+                ", age=" + age +
+                ", name='" + name + '\'' +
+                ", delFlag=" + delFlag +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';
+    }
+
     public Integer getId() {
         return id;
     }
