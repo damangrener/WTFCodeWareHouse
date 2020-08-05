@@ -31,4 +31,6 @@ public interface UserMapper {
     int batchInsert(@Param("list") List<User> users);
 
     int batchInsertOrUpdate(@Param("list") List<User> users);
+
+    Integer getMaxId();
 }

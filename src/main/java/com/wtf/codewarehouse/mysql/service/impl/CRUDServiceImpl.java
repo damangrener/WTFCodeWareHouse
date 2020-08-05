@@ -36,11 +36,12 @@ public class CRUDServiceImpl implements CRUDService {
 
     @Override
     public int batchInsert(List<User> users) {
-        for (int i = 0; i < 5; i++) {
+        for (int i = 10; i < 15; i++) {
             User user=new User();
             user.setAge(i);
             user.setName("WTF_"+i);
             user.setAccount("TF-"+i);
+            user.setDateDate(new Date());
             users.add(user);
         }
         return userMapper.batchInsert(users);
@@ -84,6 +85,13 @@ public class CRUDServiceImpl implements CRUDService {
         user.setAge(99);
         user.setCreateTime(new Date());
         return userMapper.updateByExampleSelective(user,example);
+    }
+
+    @Override
+    public int getMaxId() {
+        Integer i= userMapper.getMaxId()== null ? 2 : userMapper.getMaxId();
+        System.out.println("111111  "+i++);
+        return i;
     }
 
     /**

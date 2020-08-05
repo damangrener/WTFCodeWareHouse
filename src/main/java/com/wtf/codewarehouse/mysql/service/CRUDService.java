@@ -39,4 +39,6 @@ public interface CRUDService {
     PageInfo selectBySelective(Integer pageNum, Integer pageSize);
 
     int updateBySelective();
+
+    int getMaxId();
 }

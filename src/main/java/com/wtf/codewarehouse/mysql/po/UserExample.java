@@ -165,6 +165,66 @@ public class UserExample {
             return (Criteria) this;
         }
 
+        public Criteria andAgeIsNull() {
+            addCriterion("age is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAgeIsNotNull() {
+            addCriterion("age is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAgeEqualTo(Integer value) {
+            addCriterion("age =", value, "age");
+            return (Criteria) this;
+        }
+
+        public Criteria andAgeNotEqualTo(Integer value) {
+            addCriterion("age <>", value, "age");
+            return (Criteria) this;
+        }
+
+        public Criteria andAgeGreaterThan(Integer value) {
+            addCriterion("age >", value, "age");
+            return (Criteria) this;
+        }
+
+        public Criteria andAgeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("age >=", value, "age");
+            return (Criteria) this;
+        }
+
+        public Criteria andAgeLessThan(Integer value) {
+            addCriterion("age <", value, "age");
+            return (Criteria) this;
+        }
+
+        public Criteria andAgeLessThanOrEqualTo(Integer value) {
+            addCriterion("age <=", value, "age");
+            return (Criteria) this;
+        }
+
+        public Criteria andAgeIn(List<Integer> values) {
+            addCriterion("age in", values, "age");
+            return (Criteria) this;
+        }
+
+        public Criteria andAgeNotIn(List<Integer> values) {
+            addCriterion("age not in", values, "age");
+            return (Criteria) this;
+        }
+
+        public Criteria andAgeBetween(Integer value1, Integer value2) {
+            addCriterion("age between", value1, value2, "age");
+            return (Criteria) this;
+        }
+
+        public Criteria andAgeNotBetween(Integer value1, Integer value2) {
+            addCriterion("age not between", value1, value2, "age");
+            return (Criteria) this;
+        }
+
         public Criteria andAccountIsNull() {
             addCriterion("account is null");
             return (Criteria) this;
@@ -232,66 +292,6 @@ public class UserExample {
 
         public Criteria andAccountNotBetween(String value1, String value2) {
             addCriterion("account not between", value1, value2, "account");
-            return (Criteria) this;
-        }
-
-        public Criteria andAgeIsNull() {
-            addCriterion("age is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andAgeIsNotNull() {
-            addCriterion("age is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andAgeEqualTo(Integer value) {
-            addCriterion("age =", value, "age");
-            return (Criteria) this;
-        }
-
-        public Criteria andAgeNotEqualTo(Integer value) {
-            addCriterion("age <>", value, "age");
-            return (Criteria) this;
-        }
-
-        public Criteria andAgeGreaterThan(Integer value) {
-            addCriterion("age >", value, "age");
-            return (Criteria) this;
-        }
-
-        public Criteria andAgeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("age >=", value, "age");
-            return (Criteria) this;
-        }
-
-        public Criteria andAgeLessThan(Integer value) {
-            addCriterion("age <", value, "age");
-            return (Criteria) this;
-        }
-
-        public Criteria andAgeLessThanOrEqualTo(Integer value) {
-            addCriterion("age <=", value, "age");
-            return (Criteria) this;
-        }
-
-        public Criteria andAgeIn(List<Integer> values) {
-            addCriterion("age in", values, "age");
-            return (Criteria) this;
-        }
-
-        public Criteria andAgeNotIn(List<Integer> values) {
-            addCriterion("age not in", values, "age");
-            return (Criteria) this;
-        }
-
-        public Criteria andAgeBetween(Integer value1, Integer value2) {
-            addCriterion("age between", value1, value2, "age");
-            return (Criteria) this;
-        }
-
-        public Criteria andAgeNotBetween(Integer value1, Integer value2) {
-            addCriterion("age not between", value1, value2, "age");
             return (Criteria) this;
         }
 
@@ -542,6 +542,66 @@ public class UserExample {
 
         public Criteria andUpdateTimeNotBetween(Date value1, Date value2) {
             addCriterion("update_time not between", value1, value2, "updateTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateDateIsNull() {
+            addCriterion("date_date is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateDateIsNotNull() {
+            addCriterion("date_date is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateDateEqualTo(Date value) {
+            addCriterion("date_date =", value, "dateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateDateNotEqualTo(Date value) {
+            addCriterion("date_date <>", value, "dateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateDateGreaterThan(Date value) {
+            addCriterion("date_date >", value, "dateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateDateGreaterThanOrEqualTo(Date value) {
+            addCriterion("date_date >=", value, "dateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateDateLessThan(Date value) {
+            addCriterion("date_date <", value, "dateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateDateLessThanOrEqualTo(Date value) {
+            addCriterion("date_date <=", value, "dateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateDateIn(List<Date> values) {
+            addCriterion("date_date in", values, "dateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateDateNotIn(List<Date> values) {
+            addCriterion("date_date not in", values, "dateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateDateBetween(Date value1, Date value2) {
+            addCriterion("date_date between", value1, value2, "dateDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateDateNotBetween(Date value1, Date value2) {
+            addCriterion("date_date not between", value1, value2, "dateDate");
             return (Criteria) this;
         }
     }

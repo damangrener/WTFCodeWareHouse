@@ -55,4 +55,9 @@ class CRUDServiceImplTest {
     void updateBySelective(){
         crudService.updateBySelective();
     }
+
+    @Test
+    void getMaxId(){
+        System.out.println(crudService.getMaxId());
+    }
 }

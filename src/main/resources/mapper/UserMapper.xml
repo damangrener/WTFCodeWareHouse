@@ -3,12 +3,13 @@
 <mapper namespace="com.wtf.codewarehouse.mysql.mapper.UserMapper" >
   <resultMap id="BaseResultMap" type="com.wtf.codewarehouse.mysql.po.User" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="account" property="account" jdbcType="VARCHAR" />
     <result column="age" property="age" jdbcType="INTEGER" />
+    <result column="account" property="account" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="del_flag" property="delFlag" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="date_date" property="dateDate" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -69,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, account, age, name, del_flag, create_time, update_time
+    id, age, account, name, del_flag, create_time, update_time, date_date
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wtf.codewarehouse.mysql.po.UserExample" >
     select
@@ -106,12 +107,12 @@
     <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into user (account, age, name, 
-      del_flag, create_time, update_time
-      )
-    values (#{account,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
-      #{delFlag,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
-      )
+    insert into user (age, account, name, 
+      del_flag, create_time, update_time, 
+      date_date)
+    values (#{age,jdbcType=INTEGER}, #{account,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{delFlag,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{dateDate,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.wtf.codewarehouse.mysql.po.User" >
     <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
@@ -119,11 +120,11 @@
     </selectKey>
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="account != null" >
-        account,
-      </if>
       <if test="age != null" >
         age,
+      </if>
+      <if test="account != null" >
+        account,
       </if>
       <if test="name != null" >
         name,
@@ -137,13 +138,16 @@
       <if test="updateTime != null" >
         update_time,
       </if>
+      <if test="dateDate != null" >
+        date_date,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="account != null" >
-        #{account,jdbcType=VARCHAR},
-      </if>
       <if test="age != null" >
         #{age,jdbcType=INTEGER},
+      </if>
+      <if test="account != null" >
+        #{account,jdbcType=VARCHAR},
       </if>
       <if test="name != null" >
         #{name,jdbcType=VARCHAR},
@@ -156,6 +160,9 @@
       </if>
       <if test="updateTime != null" >
         #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dateDate != null" >
+        #{dateDate,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -171,11 +178,11 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.account != null" >
-        account = #{record.account,jdbcType=VARCHAR},
-      </if>
       <if test="record.age != null" >
         age = #{record.age,jdbcType=INTEGER},
+      </if>
+      <if test="record.account != null" >
+        account = #{record.account,jdbcType=VARCHAR},
       </if>
       <if test="record.name != null" >
         name = #{record.name,jdbcType=VARCHAR},
@@ -189,6 +196,9 @@
       <if test="record.updateTime != null" >
         update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="record.dateDate != null" >
+        date_date = #{record.dateDate,jdbcType=TIMESTAMP},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -197,12 +207,13 @@
   <update id="updateByExample" parameterType="map" >
     update user
     set id = #{record.id,jdbcType=INTEGER},
-      account = #{record.account,jdbcType=VARCHAR},
       age = #{record.age,jdbcType=INTEGER},
+      account = #{record.account,jdbcType=VARCHAR},
       name = #{record.name,jdbcType=VARCHAR},
       del_flag = #{record.delFlag,jdbcType=INTEGER},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      update_time = #{record.updateTime,jdbcType=TIMESTAMP}
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      date_date = #{record.dateDate,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -210,11 +221,11 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.wtf.codewarehouse.mysql.po.User" >
     update user
     <set >
-      <if test="account != null" >
-        account = #{account,jdbcType=VARCHAR},
-      </if>
       <if test="age != null" >
         age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="account != null" >
+        account = #{account,jdbcType=VARCHAR},
       </if>
       <if test="name != null" >
         name = #{name,jdbcType=VARCHAR},
@@ -228,27 +239,32 @@
       <if test="updateTime != null" >
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="dateDate != null" >
+        date_date = #{dateDate,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.wtf.codewarehouse.mysql.po.User" >
     update user
-    set account = #{account,jdbcType=VARCHAR},
-      age = #{age,jdbcType=INTEGER},
+    set age = #{age,jdbcType=INTEGER},
+      account = #{account,jdbcType=VARCHAR},
       name = #{name,jdbcType=VARCHAR},
       del_flag = #{delFlag,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      date_date = #{dateDate,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 
   <insert id="batchInsert" parameterType="com.wtf.codewarehouse.mysql.po.User" >
-    insert into user (account,name,age)
+    insert into user (account,name,age,date_date)
     values
     <foreach collection="list" item="item" index="index" separator=",">
       (#{item.account,jdbcType=VARCHAR},
       #{item.name,jdbcType=VARCHAR},
-      #{item.age,jdbcType=VARCHAR})
+      #{item.age,jdbcType=VARCHAR},
+      #{item.dateDate,jdbcType=TIMESTAMP})
     </foreach>
   </insert>
 
@@ -265,4 +281,10 @@
     name= values (name),
     age=values (age)
   </insert>
+
+  <select id="getMaxId" resultType="int" >
+    select AUTO_INCREMENT
+    from information_schema.tables
+    where table_name="user" limit 1;
+  </select>
 </mapper>

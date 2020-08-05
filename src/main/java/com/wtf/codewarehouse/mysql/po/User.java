@@ -5,9 +5,9 @@ import java.util.Date;
 public class User {
     private Integer id;
 
-    private String account;
-
     private Integer age;
+
+    private String account;
 
     private String name;
 
@@ -16,6 +16,22 @@ public class User {
     private Date createTime;
 
     private Date updateTime;
+
+    private Date dateDate;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", age=" + age +
+                ", account='" + account + '\'' +
+                ", name='" + name + '\'' +
+                ", delFlag=" + delFlag +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", dateDate=" + dateDate +
+                '}';
+    }
 
     public User(Integer id, String account, Integer age, String name, Integer delFlag, Date createTime, Date updateTime) {
         this.id = id;
@@ -30,19 +46,6 @@ public class User {
     public User() {
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", account='" + account + '\'' +
-                ", age=" + age +
-                ", name='" + name + '\'' +
-                ", delFlag=" + delFlag +
-                ", createTime=" + createTime +
-                ", updateTime=" + updateTime +
-                '}';
-    }
-
     public Integer getId() {
         return id;
     }
@@ -51,20 +54,20 @@ public class User {
         this.id = id;
     }
 
-    public String getAccount() {
-        return account;
-    }
-
-    public void setAccount(String account) {
-        this.account = account == null ? null : account.trim();
-    }
-
     public Integer getAge() {
         return age;
     }
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account == null ? null : account.trim();
     }
 
     public String getName() {
@@ -97,5 +100,13 @@ public class User {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public Date getDateDate() {
+        return dateDate;
+    }
+
+    public void setDateDate(Date dateDate) {
+        this.dateDate = dateDate;
     }
 }
