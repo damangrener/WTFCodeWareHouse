@@ -38,6 +38,12 @@ public class Person implements Serializable {
         this.gender=gender;
     }
 
+    public Person(String firstName, String lastName, int age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+
     public Gender getGender() {
         return gender;
     }
