@@ -44,6 +44,9 @@ public class Person implements Serializable {
         this.age = age;
     }
 
+    public Person() {
+    }
+
     public Gender getGender() {
         return gender;
     }

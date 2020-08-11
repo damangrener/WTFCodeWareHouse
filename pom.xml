@@ -79,7 +79,12 @@
             <version>1.2.13</version>
         </dependency>
 
-
+        <!--openJdk工具包，可以输出对象的结构布局信息 -->
+        <dependency>
+            <groupId>org.openjdk.jol</groupId>
+            <artifactId>jol-core</artifactId>
+            <version>0.9</version>
+        </dependency>
 
     </dependencies>
 
