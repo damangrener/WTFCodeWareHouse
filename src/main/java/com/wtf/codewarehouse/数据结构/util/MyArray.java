@@ -17,10 +17,13 @@ public class MyArray {
 
     //添加元素
     public void add(int element){
+        //创建一个新数组
         int[] newArr=new int[elements.length+1];
+        //把原数组的元素复制到新数组中
         for (int i = 0; i < elements.length; i++) {
             newArr[i]=elements[i];
         }
+        //把添加的元素放入最后一位
         newArr[elements.length]=element;
         elements=newArr;
     }
@@ -92,6 +95,35 @@ public class MyArray {
         return index;
     }
 
+    //二分法查找
+    //[1,2,3,4,5,6,7]
+    public int binarySearch(int element){
+        //开始位置
+        int begin=0;
+        //结束位置
+        int end=elements.length-1;
+        //中间位置
+        int mid=(begin+end)/2;
+
+        while(true){
+            if(begin>=end){
+                return -1;
+            }
+            //判断中间的是不是需要查找的
+            if(elements[mid]==element){
+                return mid;
+            }else{
+                if(elements[mid]>element){
+                    end=mid-1;
+                }else {
+                    begin=mid+1;
+                }
+                mid=(begin+end)/2;
+            }
+        }
+
+    }
+
 
     private void checkIndex(int index){
         if(index<0||index>elements.length-1){
@@ -115,7 +147,14 @@ public class MyArray {
         arr.show();
         arr.set(0,111);
         arr.show();
-        System.out.println(arr.getFirstIndex(1111));
+//        System.out.println(arr.getFirstIndex(1111));
+
+        MyArray arr1=new MyArray();
+        arr1.add(1);
+        arr1.add(4);
+        arr1.add(5);
+        arr1.add(8);
+        System.out.println(arr1.binarySearch(4));
     }
 
 }
