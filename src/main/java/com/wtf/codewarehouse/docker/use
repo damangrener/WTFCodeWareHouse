@@ -10,7 +10,7 @@ mv CentOS-Base.repo CentOS-Base.repo.back
 ```
 3 下载阿里云的Centos-6.repo文件  
 ```
-wget -O CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
+wget -O CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 ```
 4 重新加载yum
 ```

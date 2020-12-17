@@ -1,5 +1,6 @@
 package com.wtf.codewarehouse.数据结构.util;
 
+
 public class Node {
 
     int data;
@@ -19,7 +20,7 @@ public class Node {
             }
             currentNode=nextNode;
         }
-        currentNode.next=node;
+        this.next=node;
         return this;
     }
 
