@@ -3,22 +3,37 @@ spring:
     name: wtf-code
   datasource:
     class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://119.45.159.147:3306/demo?serverTimezone=Asia/Shanghai&&characterEncoding=utf-8
+    url: jdbc:mysql://119.45.159.147:3333/demo?serverTimezone=Asia/Shanghai&&characterEncoding=utf-8
     username: root
-    password: 123456
+    password: 986293
     hikari:
       minimum-idle: 3
       maximum-pool-size: 10
       max-lifetime: 30000
       connection-test-query: SELECT 1
-  cloud:
-    nacos:
-      discovery:
-        ###服务注册地址
-        server-addr: 119.45.159.147:8848
+#  cloud:
+#    nacos:
+#      discovery:
+#        ###服务注册地址
+#        server-addr: 119.45.159.147:8848
+
+  redis:
+    port: 6379
+    host: 119.45.159.147
+    database: 0
+    password:
+    timeout: 5000ms
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+
 server:
   port: 1998
 
 mybatis:
   mapper-locations: classpath:/mapper/*.xml
   type-aliases-package: com.wtf.codewarehouse.mysql.mapper
+
