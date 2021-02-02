@@ -27,5 +27,14 @@ public class RedisTest {
 //            System.out.println(redisTemplate.hasKey("test"));
 //            redisTemplate.delete("test");
 //        }
+
+        //插入redis并存在文件夹中
+//        redisTemplate.opsForValue().set("folder:key_01","kv放在指定文件夹中");
+        System.out.println(redisTemplate.opsForValue().get("folder:key_01"));
+
+        if(redisTemplate.hasKey("folder:key_01")){
+            System.out.println(1);
+        }
+
     }
 }
