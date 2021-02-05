@@ -1,7 +1,5 @@
 package com.wtf.codewarehouse.netty.BIO;
 
-import com.alibaba.fastjson.JSON;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -10,10 +8,10 @@ import java.net.Socket;
  * @Author: WTF
  * @Date: 2021/2/1 19:26
  */
-public class Server {
+public class BIOServer {
 
     public static void main(String[] args) {
-        Server.multiThreadServer();
+        BIOServer.multiThreadServer();
 
     }
 
@@ -32,7 +30,7 @@ public class Server {
      */
     static void multiThreadServer() {
         try {
-            ServerSocket serverSocket=new ServerSocket(8080);
+            ServerSocket serverSocket=new ServerSocket(8081);
             System.out.println("服务器已启动并监听8080端口");
             while(true) {
                 System.out.println();
@@ -81,6 +79,7 @@ public class Server {
             while (true) {
                 System.out.println();
                 System.out.println("服务器正在等待连接...");
+                //阻塞1：等待连接时阻塞
                 Socket socket = serverSocket.accept();
 //                System.out.println(JSON.toJSONString(serverSocket));
 //                System.out.println(JSON.toJSONString(socket));
@@ -89,6 +88,8 @@ public class Server {
                 System.out.println("服务器正在等待数据");
                 System.out.println(buffer);
                 String content = new String(buffer, "utf-8");
+                //阻塞2：等待数据时阻塞
+                socket.getInputStream().read(buffer);
 //                System.out.println(content.split(";")[1]);
 //                socket.getInputStream().read(buffer,0,Integer.parseInt(content.split(";")[1]));
                 System.out.println("服务器已经接收到数据");

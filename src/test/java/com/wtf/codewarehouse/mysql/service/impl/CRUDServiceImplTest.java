@@ -3,6 +3,7 @@ package com.wtf.codewarehouse.mysql.service.impl;
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelReader;
 import com.alibaba.excel.read.metadata.ReadSheet;
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageInfo;
 import com.google.common.collect.Lists;
@@ -13,6 +14,11 @@ import com.wtf.codewarehouse.mysql.service.CRUDService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
+import org.springframework.batch.core.*;
+import org.springframework.batch.core.launch.JobLauncher;
+import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
+import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
+import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -236,5 +242,21 @@ class CRUDServiceImplTest {
 //                excelReader.finish();
 //            }
 //        }
+    }
+
+
+    @Autowired
+    private JobLauncher jobLauncher;
+
+    @Autowired
+    private Job consoleJob;
+
+    public void testJob() throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException {
+        JobParameters jobParameters = new JobParametersBuilder()
+                .addLong("time", System.currentTimeMillis())
+                .toJobParameters();
+        JobExecution run = jobLauncher.run(consoleJob, jobParameters);
+        ExitStatus exitStatus=run.getExitStatus();
+        log.debug(JSON.toJSONString(exitStatus));
     }
 }
