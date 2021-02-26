@@ -16,6 +16,7 @@ public class ConvertProcessor implements ItemProcessor<String, String> {
     public String process(String s) throws Exception {
         String dataProcessed = s.toUpperCase();
         log.debug("ConvertProcessor process data " + s + "-->" + dataProcessed);
+        System.err.println("ConvertProcessor process data " + s + "-->" + dataProcessed);
         return dataProcessed;
     }
 }

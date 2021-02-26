@@ -16,6 +16,7 @@ public class ConsoleWriter implements ItemWriter<String> {
         for (String msg: list
              ) {
             log.debug("ConsoleWriter write data: "+msg);
+            System.err.println("ConsoleWriter write data: "+msg);
         }
     }
 }

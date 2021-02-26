@@ -138,6 +138,19 @@ public class CollectionUtils {
         return result;
     }
 
+    /**
+     * 【排序】
+     * @return
+     */
+    public static List sort(List<DemoClass> list){
+        //正序
+        list.sort(Comparator.comparing(DemoClass::getB));
+        //倒序
+        list.sort(Comparator.comparing(DemoClass::getB).reversed());
+
+        return list;
+    }
+
 
     public static void show(List<Object> list) {
         list.forEach(System.out::println);

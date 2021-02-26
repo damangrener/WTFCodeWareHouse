@@ -251,6 +251,7 @@ class CRUDServiceImplTest {
     @Autowired
     private Job consoleJob;
 
+    @Test
     public void testJob() throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException {
         JobParameters jobParameters = new JobParametersBuilder()
                 .addLong("time", System.currentTimeMillis())

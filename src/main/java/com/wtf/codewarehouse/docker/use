@@ -31,7 +31,8 @@ docker version #查看docker 版本
 ```
 设置加速器
 ```
-curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://95822026.m.daocloud.io
+curl -sSL https://
+loud.io
 systemctl restart docker #重启docker
 ```
 #### 设置完daocloud报错  

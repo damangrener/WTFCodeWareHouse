@@ -18,6 +18,7 @@ public class ConsoleJobEndListener extends JobExecutionListenerSupport {
         log.info(JSON.toJSONString(jobExecution));
         if(jobExecution.getStatus()== BatchStatus.COMPLETED){
             log.debug("console batch job complete");
+            System.err.println("console batch job complete");
         }
     }
 }
