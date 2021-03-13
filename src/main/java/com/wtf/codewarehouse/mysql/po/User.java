@@ -1,8 +1,9 @@
 package com.wtf.codewarehouse.mysql.po;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+public class User implements Serializable {
     private Integer id;
 
     private Integer age;
