@@ -1,6 +1,5 @@
 package com.wtf.codewarehouse.数据结构.MyArray;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MyArrayList {
@@ -76,26 +75,24 @@ public class MyArrayList {
     }
 
     //二分法查找
-    public int binarySearch(int element){
-        int begin=0;
-        int end=elements.length-1;
-        int mid=(begin+end)/2;
+    public int binarySearch(int element) {
+        int begin = 0;
+        int end = elements.length - 1;
+        int mid = (begin + end) / 2;
 
-        while(true){
-            if(begin>end){
+        while (true) {
+            if (begin > end) {
                 return -1;
             }
-            if(elements[mid]==element){
+            if (elements[mid] == element) {
                 return mid;
-            }else if(elements[mid]>element){
-                end=mid-1;
-            }else if(elements[mid]<element){
-                begin=mid+1;
+            } else if (elements[mid] > element) {
+                end = mid - 1;
+            } else if (elements[mid] < element) {
+                begin = mid + 1;
             }
-            mid=(begin+end)/2;
+            mid = (begin + end) / 2;
         }
-
-
 
 
     }
