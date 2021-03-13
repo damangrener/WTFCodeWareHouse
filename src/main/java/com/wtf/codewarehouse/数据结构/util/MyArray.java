@@ -106,7 +106,7 @@ public class MyArray {
         int mid=(begin+end)/2;
 
         while(true){
-            if(begin>=end){
+            if(begin>end){
                 return -1;
             }
             //判断中间的是不是需要查找的

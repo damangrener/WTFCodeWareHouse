@@ -44,3 +44,9 @@ cat /etc/docker/daemon.json
 {"registry-mirrors": ["http://95822026.m.daocloud.io"],} 
 ``` 
 果然，json格式不对，去掉逗号后就正常了
+
+### Centos8 yum install docker -y之后启动报Unit docker.service not found
+```
+国内 daocloud 一键安装命令：
+curl -sSL https://get.daocloud.io/docker | sh
+```

@@ -11,10 +11,12 @@ public class IntegerAndInt {
         Integer i2=100;
         Integer i3=200;
         Integer i4=200;
+        Integer i5=new Integer(100);
 
-        System.out.println(i1==i2);
-        System.out.println(i3==i4);
-        System.out.println(i3.equals(i4));
+        System.out.println(i1==i2);//true
+        System.out.println(i3==i4);//false
+        System.out.println(i3.equals(i4));//true
+        System.out.println(i1==i5);//false
 
         Double d1 = 100.0;
         Double d2 = 100.0;
@@ -24,4 +26,10 @@ public class IntegerAndInt {
         System.out.println(d3==d4);
         System.out.println(d3.equals(d4));
     }
+    public int add(){
+        return 1;
+    }
+//    public double add(){
+//        return 1;
+//    }
 }
