@@ -6,14 +6,20 @@ package com.wtf.codewarehouse.javabase.javap;
  */
 public class ATest {
 
+
     public static void main(String[] args) {
-        int a=1;
-        int b=2;
+        ATest aTest = new ATest();
+        int a = 1;
+        int b = 2;
 
-        int c = a+b;
+        int c = aTest.add(a, b);
 
-        int d=0;
+        int d = 0;
 
-        c=d;
+        c = d;
+    }
+
+    public synchronized int add(int a, int b) {
+        return a + b;
     }
 }

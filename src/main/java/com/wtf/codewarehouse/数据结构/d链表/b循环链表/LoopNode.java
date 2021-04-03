@@ -1,4 +1,4 @@
-package com.wtf.codewarehouse.数据结构.util;
+package com.wtf.codewarehouse.数据结构.d链表.b循环链表;
 
 
 public class LoopNode {

@@ -1,4 +1,4 @@
-package com.wtf.codewarehouse.数据结构.MyArray;
+package com.wtf.codewarehouse.数据结构.a数组;
 
 import java.util.Arrays;
 
