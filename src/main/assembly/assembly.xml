@@ -1,0 +1,6 @@
+<fileSets>
+    <fileSet>
+        <directory>${basedir}/src/main/resources</directory>
+        <outputDirectory>${file.separator}</outputDirectory>
+    </fileSet>
+</fileSets>
